@@ -1,0 +1,14 @@
+PODS:
+  - BButton (3.1.0)
+
+DEPENDENCIES:
+  - BButton (from `git://github.com/jessesquires/BButton.git`)
+
+EXTERNAL SOURCES:
+  BButton:
+    :git: git://github.com/jessesquires/BButton.git
+
+SPEC CHECKSUMS:
+  BButton: f9d8577c87622fd751e0772b744886c620b2ac32
+
+COCOAPODS: 0.19.1

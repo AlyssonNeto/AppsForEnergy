@@ -7,12 +7,37 @@
 //
 
 #import "AFEAppDelegate.h"
+#import "AFEContainerViewController.h"
+#import "AFEStep1ViewController.h"
 
 @implementation AFEAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    UINavigationController *navigationViewController = [[UINavigationController alloc] initWithNibName:nil bundle:NULL];
+    navigationViewController.navigationBar.tintColor = [UIColor whiteColor];
+    navigationViewController.navigationBar.barTintColor = UIColorFromRGB(0xb50041);
+    navigationViewController.navigationBar.translucent = NO;
+    navigationViewController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+
+    AFEStep1ViewController *step1ViewController = [[AFEStep1ViewController alloc] initWithNibName:nil bundle:NULL];
+
+    AFEContainerViewController *containerViewController = [[AFEContainerViewController alloc] initWithRootViewController:step1ViewController];
+
+    [navigationViewController setViewControllers:@[containerViewController]];
+
+	self.window.rootViewController = navigationViewController;
+
     return YES;
 }
 							
